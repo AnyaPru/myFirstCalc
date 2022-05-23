@@ -13,7 +13,7 @@ public class Main {
         String[] strings = input.split("\\+");   // метод делит введенную строку на две подстроки с помощью разделителя +
         if (strings.length == 2) {                    // создаем условие: если длина массива - 2 строки,
             a = convertToInt(input, strings [0]);    // то вызывается функция convertToInt,
-            b = convertToInt(input, strings [1]);   // которая преобразует а и b в арабские int
+            b = convertToInt(input, strings [1]);   // которая преобразует а и b в int
             throwException();                       // выбрасываем исключение, если а или b меньше 1 и больше 10.
             int x = a + b;                         // считаем операцию со знаком, по которому делили строку на две
             return convertToString(input,x);      // переводим int в строку с римскими или арабскими и возвращаем строку с ответом
@@ -44,9 +44,9 @@ public class Main {
         }                       // если условие не выполняется, выбрасывается исключение
         throw new IllegalArgumentException("Вы ввели некорректный символ операции или операция не соответствует заданию");
     }
-    public static int convertToInt(String input, String y) { // инициализируем функцию convertToInt, чтобы перевести а и b в int
+    public static int convertToInt(String input, String y) { // инициируем функцию convertToInt, чтобы перевести а и b в int
         if (input.contains("I") || input.contains("V") || input.contains("X")) { // ставим условие, что если строка содержит один из этих символов,
-            return Romans.valueOf(y).arab;      //то нужно найти в энаме их арабские значения и вернуть арабские числа
+            return Romans.valueOf(y).arab;      //то нужно найти элемент в энаме и вернуть соответствющее ему число
         } else {                               // если строка не содержит подобных символов, то
             return Integer.parseInt(y);       // преобразуем их в числа
         }
